@@ -1,6 +1,7 @@
 import streamlit as st
 from utils import load_data
 import matplotlib.pyplot as plt
+import os
 
 def plot_ghi_over_time(data):
     plt.figure(figsize=(12, 6))
@@ -15,7 +16,7 @@ def plot_ghi_over_time(data):
 
 def main():
     st.title("Solar Radiation Analysis Dashboard")
-
+    st.write("Current Working Directory:", os.getcwd())
     @st.cache_data()
     def load_data_cached():
         return load_data()
